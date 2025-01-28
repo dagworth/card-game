@@ -2,13 +2,14 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class GamePlayer : Node {
-    [Signal] public delegate void DrawCardEventHandler(int hand_index);
-    [Signal] public delegate void PlayCardEventHandler(int board_index);
+public partial class GamePlayer : Node2D {
+    [Signal] public delegate void OnDrawEventHandler(int hand_index);
+    [Signal] public delegate void OnPlayEventHandler(int board_index);
 
     public int health = 25;
     public int mana = 0;
     public bool attacked = false;
+    public GameHandler game_handler;
 
     public List<CardStatus> hand = new();
     public List<CardStatus> deck = new();
@@ -16,7 +17,8 @@ public partial class GamePlayer : Node {
 
     public List<CardStatus> board = new();
 
-    public GamePlayer(List<CardStatus> deck){
+    public GamePlayer(GameHandler game_handler, List<CardStatus> deck){
+        this.game_handler = game_handler;
         this.deck = deck;
     }
 
@@ -28,11 +30,11 @@ public partial class GamePlayer : Node {
         CardStatus card = deck[index];
         deck.RemoveAt(index);
         hand.Add(card);
-        EmitSignal("DrawCard", hand.Count-1);
+        EmitSignal("OnDraw", hand.Count-1);
         return card;
     }
 
-    public void playCard(){
-        //complicated
+    public void playCard(int id){
+        game_handler.playMinion(id);
     }
 }

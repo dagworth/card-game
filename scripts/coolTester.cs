@@ -13,8 +13,8 @@ public partial class coolTester : Node2D
     {
         if (@event is InputEventKey keyEvent && keyEvent.Pressed && keyEvent.Keycode == Key.Enter){
             GetNode<GameHandler>("/root/Game").startGame(
-                new List<string>(){"Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob"},
-                new List<string>(){"Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob","Bob"}
+                new List<string>(){"Alice","Clair","Alice","Alice","Bob","Bob","Clair","Bob","Bob","Clair"},
+                new List<string>(){"Alice","Clair","Alice","Alice","Bob","Bob","Clair","Bob","Bob","Clair"}
             );
         }
     }

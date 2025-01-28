@@ -13,18 +13,20 @@ config_version=5
 config/name="card game"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/stretch/mode="viewport"
 
 [dotnet]
 
 project/assembly_name="card game"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [importer_defaults]
 

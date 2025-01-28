@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cboem7nneigse"]
+
+[ext_resource type="Texture2D" uid="uid://b4sfrlpjf2gg0" path="res://resources/images/items.png" id="1_r4oqh"]
+[ext_resource type="Script" path="res://scripts/CardData.cs" id="2_7aipe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc0ay"]
+atlas = ExtResource("1_r4oqh")
+region = Rect2(80, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_7aipe")
+type = 2
+name = "Alice"
+description = "she helps bob sometimes"
+cost = 1
+health = 2
+attack = 4
+abilities = []
+passives = []
+image = SubResource("AtlasTexture_gc0ay")

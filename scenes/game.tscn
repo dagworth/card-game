@@ -3,36 +3,41 @@
 [ext_resource type="Script" path="res://scripts/coolTester.cs" id="1_bjgkh"]
 [ext_resource type="Script" path="res://scripts/GameHandler.cs" id="1_nrgbs"]
 [ext_resource type="Script" path="res://scripts/UIController.cs" id="1_ubjgg"]
-[ext_resource type="Texture2D" uid="uid://c44m4tswvx1j0" path="res://icon.svg" id="2_jqvcg"]
+[ext_resource type="Texture2D" uid="uid://b5y2vbc5qwiap" path="res://resources/images/istockphoto-912332782-612x612.jpg" id="4_2tro1"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("ui")]
 script = ExtResource("1_nrgbs")
+ui = NodePath("UIController")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1110.0
-offset_top = 116.0
-offset_right = 1150.0
-offset_bottom = 139.0
-text = "hiiiiii"
 
 [node name="Hand" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1669.0
+offset_top = 528.0
+offset_right = 1878.0
+offset_bottom = 578.0
+text = "next turn
+"
+
+[node name="UIController" type="Node2D" parent="." node_paths=PackedStringArray("ui_hand", "gameHandler")]
+script = ExtResource("1_ubjgg")
+ui_hand = NodePath("../CanvasLayer/Hand")
+gameHandler = NodePath("..")
+
 [node name="Board" type="Node2D" parent="."]
 
 [node name="tester" type="Node2D" parent="."]
 script = ExtResource("1_bjgkh")
 
-[node name="UIController" type="Node2D" parent="."]
-script = ExtResource("1_ubjgg")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 542)
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(858, 159)
-texture = ExtResource("2_jqvcg")
+[node name="deck" type="Sprite2D" parent="."]
+position = Vector2(1834, 744)
+scale = Vector2(0.171569, 0.371324)
+texture = ExtResource("4_2tro1")

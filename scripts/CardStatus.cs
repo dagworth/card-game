@@ -2,6 +2,7 @@ using Godot;
 using System;
 
 public class CardStatus {
+    public int card_id = 1;
     public CardType type = CardType.Minion;
     public Control hover_card;
     public string name = "";
@@ -12,7 +13,8 @@ public class CardStatus {
     public Godot.Collections.Array<Abilities> abilities = new();
     public Godot.Collections.Array<Passives> passives = new();
 
-    public CardStatus(CardData data){
+    public CardStatus(int card_id, CardData data){
+        this.card_id = card_id;
         type = data.type;
         name = data.name;
         cost = data.cost;
