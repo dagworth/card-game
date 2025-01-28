@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://da3pxh1unp8f6"]
+
+[ext_resource type="Script" path="res://scripts/HandCard.cs" id="1_1ckp6"]
+[ext_resource type="FontFile" uid="uid://csbrln2ywlk2l" path="res://resources/fonts/Mirdane-Regular.otf" id="1_k7fna"]
+[ext_resource type="Texture2D" uid="uid://b4sfrlpjf2gg0" path="res://resources/images/items.png" id="2_bfo6o"]
+[ext_resource type="Texture2D" uid="uid://b5qfdcx4un6f4" path="res://resources/images/cool_card.png" id="2_tf7pd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4478f"]
+atlas = ExtResource("2_bfo6o")
+region = Rect2(64, 48, 16, 16)
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 115.0
+offset_bottom = 190.0
+script = ExtResource("1_1ckp6")
+
+[node name="ImageLabel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 23.0
+offset_right = 112.0
+offset_bottom = 186.0
+texture = SubResource("AtlasTexture_4478f")
+
+[node name="CoolCard" type="Sprite2D" parent="."]
+position = Vector2(57.825, 91.0124)
+scale = Vector2(0.0501313, 0.0499937)
+texture = ExtResource("2_tf7pd")
+
+[node name="CostLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 727.0
+offset_bottom = 483.0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_k7fna")
+theme_override_font_sizes/normal_font_size = 500
+text = "21"
+fit_content = true
+
+[node name="AttackLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = -10.0
+offset_top = 88.0
+offset_right = 710.0
+offset_bottom = 472.0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_k7fna")
+theme_override_font_sizes/normal_font_size = 450
+text = "22"
+fit_content = true
+scroll_active = false
+text_direction = 2
+
+[node name="HealthLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 91.0
+offset_top = 88.0
+offset_right = 811.0
+offset_bottom = 487.0
+scale = Vector2(0.05, 0.05)
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("1_k7fna")
+theme_override_font_sizes/normal_font_size = 450
+text = "44"
+fit_content = true
+text_direction = 1
+
+[node name="NameLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.02527
+offset_right = 1376.0
+offset_bottom = 289.025
+scale = Vector2(0.05, 0.05)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_k7fna")
+theme_override_font_sizes/normal_font_size = 350
+text = "Bob"
+
+[node name="DescLabel" type="RichTextLabel" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 22.3333
+offset_top = 128.333
+offset_right = 742.333
+offset_bottom = 308.333
+scale = Vector2(0.1, 0.1)
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "he cool"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cyxh4klbveh7s"]
+
+[ext_resource type="Texture2D" uid="uid://b4sfrlpjf2gg0" path="res://resources/images/items.png" id="1_3qc8j"]
+[ext_resource type="Script" path="res://scripts/CardData.cs" id="1_md37t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc0ay"]
+atlas = ExtResource("1_3qc8j")
+region = Rect2(96, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_md37t")
+type = 2
+name = "Bob"
+description = "he is the most cool guy you will have ever seen"
+cost = 6
+health = 19
+attack = 21
+abilities = []
+passives = []
+image = SubResource("AtlasTexture_gc0ay")
